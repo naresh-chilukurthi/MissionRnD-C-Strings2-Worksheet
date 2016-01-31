@@ -16,8 +16,34 @@ original String
 
 #include <stddef.h>
 #include <stdlib.h>
-
+#include<stdio.h>
+char val[50];
 char * get_sub_string(char *str, int i, int j){
-
-    return NULL;
+    if(str==NULL||i>j)
+    {
+        return NULL;
+    }
+    else
+    {
+        //extern char val[50];
+        //val=(char*)malloc((j-i+1)*sizeof(char));
+        int l=i;
+        while(str[l]!='\0'&&l<=j)
+        {
+                val[l-i]=str[l];
+                l++;
+        }
+        val[l]='\0';
+        return val;
+    }
 }
+
+/*int main()
+{
+    char str[] = "abcdefgh.,812639";
+			int i = 0;
+			int j = 2;
+			char *new_str = get_sub_string(str, i, j);
+			printf("%s",new_str);
+}
+*/
